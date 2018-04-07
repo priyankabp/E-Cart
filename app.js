@@ -12,6 +12,7 @@ var flash = require('connect-flash');
 var validator = require('express-validator');
 
 var routes = require('./routes/index');
+var userRoutes = require('./routes/user');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/user', userRoutes);
 app.use('/', routes);
 
 // catch 404 and forward to error handler
