@@ -1,5 +1,3 @@
-import { model } from 'mongoose';
-
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -11,4 +9,4 @@ var schema = new Schema({
 
 });
 
-model.exports = mongoose.model('Product',schema);
+module.exports = mongoose.model('Product',schema);
